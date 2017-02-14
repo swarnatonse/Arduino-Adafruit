@@ -6,16 +6,18 @@ uint8_t c_red = 0;
 uint8_t c_green = 0;
 uint8_t c_blue = 0;
 
+// This program could be made better with bit manipulation
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  Serial.println("Circuit Playground test!");
+  Serial.println("Color Mixer!");
 
   CircuitPlayground.begin();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Initialize pixels 8, 6 and 3 with red, green and blue respectively
   CircuitPlayground.setPixelColor(8, 255, 0, 0);
   CircuitPlayground.setPixelColor(6, 0, 255, 0);
   CircuitPlayground.setPixelColor(3, 0, 0, 255);
@@ -55,11 +57,11 @@ void loop() {
     else{
       Serial.println("Or here!");
       switch(rgb){
-        case 100: c_red = (c_red+255)/2;
+        case 100: c_red = (c_red+255)/2; delay(3000);
         break;
-        case 10: c_green = (c_green+255)/2;
+        case 10: c_green = (c_green+255)/2; delay(3000);
         break;
-        case 1: c_blue = (c_blue+255)/2;
+        case 1: c_blue = (c_blue+255)/2; delay(3000);
         break;
       }
       CircuitPlayground.setPixelColor(1, c_red, c_green, c_blue);
