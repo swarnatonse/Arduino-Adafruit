@@ -21,7 +21,7 @@ void loop() {
   CircuitPlayground.setPixelColor(8, 255, 0, 0);
   CircuitPlayground.setPixelColor(6, 0, 255, 0);
   CircuitPlayground.setPixelColor(3, 0, 0, 255);
-  //CircuitPlayground.setPixelColor(1, 255, 255, 255);
+  
   if(CircuitPlayground.readCap(9) > 200 || CircuitPlayground.readCap(10) > 200)
   {
     rgb = 100;
